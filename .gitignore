@@ -1,0 +1,17 @@
+/*
+/*/
+
+!.gitignore
+
+# this is weird, but doesn't work without it => TO FIX!
+!/*
+/*/*
+
+!/Libraries/*
+
+!/*/[Aa]ssets/
+!/*/[Pp]ackages/
+!/*/[Pp]rojectSettings/
+
+# Add other libraries extensions (so, etc.)
+/*/[Aa]ssets/Plugins/*.dll*
