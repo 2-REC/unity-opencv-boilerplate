@@ -114,16 +114,23 @@ A lot of documentation and tutorials can be found explaining how to use the Open
 
 - Add the following to a new script or to an existing one:<br>
     - Import the "ProcessImage" method from the library:<br>
-            [DllImport("UnityOpenCV")]
-            static extern void ProcessImage(ref Color32[] raw, int width, int height);
+        ```cs
+        [DllImport("UnityOpenCV")]
+        static extern void ProcessImage(ref Color32[] raw, int width, int height);
+        ```
         Where "UnityOpenCV" is the name of the library.<br>
         It requires to import the Unity Interop Services:<br>
-            using System.Runtime.InteropServices;
-
+        ```cs
+        using System.Runtime.InteropServices;
+        ```
     - Call the method:<br>
-            ProcessImage(ref rawImage, width, height);
+        ```cs
+        ProcessImage(ref rawImage, width, height);
+        ```
         Where "rawImg" is a Color32 array:<br>
-            Color32[] rawImage;
+        ```cs
+        Color32[] rawImage;
+        ```
 
 
 The provided sample project in "unity-opencv" can be used as an example or starting base.<br>
