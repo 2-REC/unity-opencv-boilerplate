@@ -1,0 +1,13 @@
+/*
+/*/
+
+!.gitignore
+
+# this is weird, but doesn't work without it => TO FIX!
+!/*
+/*/*
+
+# OpenCV Library
+!/*/UnityOpenCV.vcxproj
+!/*/sources
+!/*.sln

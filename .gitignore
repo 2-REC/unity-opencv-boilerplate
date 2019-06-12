@@ -7,11 +7,20 @@
 !/*
 /*/*
 
-!/UnityOpenCV_Library/*
 
+# Unity Projects
 !/*/[Aa]ssets/
 !/*/[Pp]ackages/
 !/*/[Pp]rojectSettings/
 
 # Add other libraries extensions (so, etc.)
-/*/[Aa]ssets/Plugins/*.dll*
+/unity-opencv/[Aa]ssets/Plugins/*.dll*
+
+# "unity-kinect-opencv" Project
+# Kinect related files
+/unity-kinect-opencv/Assets/Kinect/Plugins/
+/unity-kinect-opencv/Assets/Kinect/Plugins.meta
+/unity-kinect-opencv/Assets/Kinect/Standard Assets/
+/unity-kinect-opencv/Assets/Kinect/Standard Assets.meta
+# OpenCV related files
+/unity-kinect-opencv/Assets/OpenCV/Plugins/*.dll*
