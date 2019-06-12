@@ -25,11 +25,10 @@ E.g.:
 
 The Visual Studio solution in the "UnityOpenCV" directory can be used to generate the library.<br>
 
-The library can also be generated manually from a new project, as described in the following paragraphs.<br>
+The library can also be generated from scratch, as described in the following paragraphs.<br>
 
 REMARK: The following process is using Visual Studio as the IDE. This is thus only valid for Windows.<br>
-The steps should be similar in any IDE or OS.<br>
-Additionally, in order to be used on a different OS, changes in the code are required: "decl", "pragma", etc.<br>
+The steps should however be similar in any IDE or OS.<br>
 The version of VS that was used is 2017, though there shouldn't be big differences with other versions of the IDE.<br>
 
 
@@ -46,6 +45,7 @@ The version of VS that was used is 2017, though there shouldn't be big differenc
     - Copy the 2 source files from the "UnityOpenCV/UnityOpenCV/sources" directory of this repository to the new directory<br>
         - <b>"unity_opencv.h"</b>
         - <b>"unity_opencv.cpp"</b>
+        ! - TODO: In order to be used on a different OS, changes in the code are required ("decl")!<br>
     - In Visual Studio, add the 2 files to the solution<br>
         - "Project" => "Add Existing Item..."<br>
         - Navigate to the directory where the 2 files have been copied, and select them.<br>
@@ -136,12 +136,17 @@ A lot of documentation and tutorials can be found explaining how to use the Open
         byte[] rawImage;
         ```
 
+### Sample Unity Projects
 
-The provided Unity sample project in "unity-opencv" can be used as an example or starting base.<br>
-It requires the OpenCV library as well as a generated UnityOpenCV library to be added to the Assets.<br>
+The provided Unity sample projects can be used as example or starting base.<br>
 
-The other Unity project in "unity-kinect-opencv" shows how to use OpenCV with the Kinect colour data.<br>
-It is based on the "Green Screen" sample from the [MS Kinect SDK](https://developer.microsoft.com/en-us/windows/kinect).<br>
+- "unity-opencv": Very basic project acquiring a video feed from the device's webcam and sending the image to OpenCV.<br>
+    It is a slightly modified version of Amin Ahmadi's project (see DISCLAIMER below).<br>
+- "unity-kinect-opencv": Shows how to use OpenCV with the Kinect RGB video feed.<br>
+    It is based on the "Green Screen" sample from the [MS Kinect SDK](https://developer.microsoft.com/en-us/windows/kinect).<br>
+
+
+The projects require the OpenCV library as well as the generated C++ library to be added to the Assets in a "plugins" directory.<br>
 
 
 ## DISCLAIMER
