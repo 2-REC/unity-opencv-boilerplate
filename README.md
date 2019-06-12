@@ -23,6 +23,10 @@ E.g.:
 
 ## CREATE THE LIBRARY
 
+The Visual Studio solution in the "UnityOpenCV" directory can be used to generate the library.<br>
+
+The library can also be generated manually from a new project, as described in the following paragraphs.<br>
+
 REMARK: The following process is using Visual Studio as the IDE. This is thus only valid for Windows.<br>
 The steps should be similar in any IDE or OS.<br>
 Additionally, in order to be used on a different OS, changes in the code are required: "decl", "pragma", etc.<br>
@@ -39,7 +43,7 @@ The version of VS that was used is 2017, though there shouldn't be big differenc
 - Add the boilerplate source files<br>
     - Navigate to the directory of the newly created project, and create a subdirectory "source"<br>
         => A different directory structure can be used if desired.<br>
-    - Copy the 2 source files from the "UnityOpenCV_Library" directory of this repository to the new directory<br>
+    - Copy the 2 source files from the "UnityOpenCV/UnityOpenCV/sources" directory of this repository to the new directory<br>
         - <b>"unity_opencv.h"</b>
         - <b>"unity_opencv.cpp"</b>
     - In Visual Studio, add the 2 files to the solution<br>
@@ -116,7 +120,7 @@ A lot of documentation and tutorials can be found explaining how to use the Open
     - Import the "ProcessImage" method from the library:<br>
         ```cs
         [DllImport("UnityOpenCV")]
-        static extern void ProcessImage(ref Color32[] raw, int width, int height);
+        static extern void ProcessImage(ref byte[] raw, int width, int height);
         ```
         Where "UnityOpenCV" is the name of the library.<br>
         It requires to import the Unity Interop Services:<br>
@@ -127,14 +131,17 @@ A lot of documentation and tutorials can be found explaining how to use the Open
         ```cs
         ProcessImage(ref rawImage, width, height);
         ```
-        Where "rawImg" is a Color32 array:<br>
+        Where "rawImg" is a byte array:<br>
         ```cs
-        Color32[] rawImage;
+        byte[] rawImage;
         ```
 
 
-The provided sample project in "unity-opencv" can be used as an example or starting base.<br>
+The provided Unity sample project in "unity-opencv" can be used as an example or starting base.<br>
 It requires the OpenCV library as well as a generated UnityOpenCV library to be added to the Assets.<br>
+
+The other Unity project in "unity-kinect-opencv" shows how to use OpenCV with the Kinect colour data.<br>
+It is based on the "Green Screen" sample from the [MS Kinect SDK](https://developer.microsoft.com/en-us/windows/kinect).<br>
 
 
 ## DISCLAIMER
