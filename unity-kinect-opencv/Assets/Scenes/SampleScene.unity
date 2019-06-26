@@ -402,6 +402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kinectInputManager: {fileID: 705146044}
   image: {fileID: 1293692483}
+  processFullImage: 0
 --- !u!114 &1141125211
 MonoBehaviour:
   m_ObjectHideFlags: 0
