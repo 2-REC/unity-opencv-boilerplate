@@ -8,8 +8,27 @@ typedef unsigned char byte;
 extern "C" {
 #endif
 
-    __declspec(dllexport) void ProcessImage(byte **raw, int width, int height);
-	__declspec(dllexport) void ProcessImageRegion(byte **raw, int width, int height, cv::Rect roi);
+	/**
+	 * Process on full image
+	 * Basic example: Edge detection
+	 * => Modifies the original image
+	 */
+	__declspec(dllexport) void ProcessImage(byte **ppRaw, int width, int height);
+
+	/**
+	 * Process on ROI in image
+	 * Basic example: Colour detection (hardcoded colour)
+	 * => Modifies the original image
+	 */
+	__declspec(dllexport) void ProcessImageRegion(byte **ppRaw, int width, int height, cv::Rect roi);
+
+	/**
+	 * Apply a mask to ROI
+	 * => Mask image can be of different resolution
+	 * => Modifies the original image
+	 */
+	__declspec(dllexport) void ApplyMask(byte **ppRaw, int width, int height, cv::Rect region, byte* pMask, int maskWidth, int maskHeight);
+
 
 #ifdef __cplusplus
 }
